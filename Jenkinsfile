@@ -1,6 +1,6 @@
 node {
   echo "build"
   echo "Test"
-  echo "integraion test"	
+  echo "on air"	
 }
 

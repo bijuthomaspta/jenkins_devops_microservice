@@ -1,8 +1,6 @@
 node {
-	stages
-	  stage ('haii') {
-		echo "build"
-		echo "Test"
-		echo "deployment"
-	}
+  echo "build"
+  echo "Test"
+  echo "deployment"	
 }
+

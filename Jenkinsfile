@@ -1,10 +1,14 @@
 pipeline {
-  agent { docker { image 'maven:3.8.6-openjdk-18-slim' }}
+  agent any
   stages {
     stage ('build') {
       steps {
-        sh 'mvn --version' 
-        echo 'build'
+        echo "build"
+        echo "path= $path"
+        echo "Build_numbe= $en.vmBUILD_NUMBER"
+        echo "build_id= $env.BUILD_ID"
+        echo "job_name= $env.JOB_NAME"
+        echo "Build_tag= $env.BUILD_TAG"
       }
     }
   }

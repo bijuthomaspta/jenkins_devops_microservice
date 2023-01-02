@@ -18,5 +18,21 @@ pipeline {
         echo "Build_tag= $env.BUILD_TAG"
       }
     }
+    stage ('compile') {
+      steps {
+        sh 'mvn clean commpile'
+      }
+    }
+    stage ('Test') {
+      steps {
+        sh 'mvn test'
+      }
+    }
+    
+    stage ('integration test') {
+      steps {
+        sh "mvn failsafe:integration-test failsafe:verify"
+      }
+    }
   }
 }       

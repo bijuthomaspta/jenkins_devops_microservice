@@ -4,7 +4,7 @@ pipeline {
     stage ('build') {
       steps {
         echo "build"
-        echo "path= $path"
+//         echo "path= $path"
         echo "Build_numbe= $en.vmBUILD_NUMBER"
         echo "build_id= $env.BUILD_ID"
         echo "job_name= $env.JOB_NAME"

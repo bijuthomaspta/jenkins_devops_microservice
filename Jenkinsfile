@@ -34,27 +34,27 @@ pipeline {
         sh "mvn failsafe:integration-test failsafe:verify"
       }
     }
-    stage ('package') {
-      steps {
-        sh "mvn package-DiskipTests"
-      }
-    }
-    stage ('Build docker image') {
-      steps {
-        script {
-          dockerImage = docker.build ("bijuthomaspta/currency-exchange-devops:${env.BUILD_TAG}")
-        }
-      }
-    }
-    stage ('push docker image') {
-      steps {
-        script {
-          docker.withRegistry('', 'd6a3ed00-bb9f-4d43-9139-83669379c3db') {
-            dockerImage.push();
-            dockerImage.push('latest');
-          }
-        }
-      }
-    }
+//     stage ('package') {
+//       steps {
+//         sh "mvn package-DiskipTests"
+//       }
+//     }
+//     stage ('Build docker image') {
+//       steps {
+//         script {
+//           dockerImage = docker.build ("bijuthomaspta/currency-exchange-devops:${env.BUILD_TAG}")
+//         }
+//       }
+//     }
+//     stage ('push docker image') {
+//       steps {
+//         script {
+//           docker.withRegistry('', 'd6a3ed00-bb9f-4d43-9139-83669379c3db') {
+//             dockerImage.push();
+//             dockerImage.push('latest');
+//           }
+//         }
+//       }
+//     }
   }
 }       
